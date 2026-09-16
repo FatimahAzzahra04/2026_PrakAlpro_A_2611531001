@@ -45,7 +45,7 @@ else:
     print("\nPembagian tidak dapat dilakukan")
     print("Angka kedua tidak boleh bernilai 0")
 
-#Operator tambhan : assignment perpangkatan
+#Operator tambahan : assignment perpangkatan
 hasil_1001 = angka1_1001
 hasil_1001 **= angka2_1001
 print("\nAssignment perpangkatan(**=)")
