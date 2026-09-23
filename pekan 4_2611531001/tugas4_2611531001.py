@@ -31,10 +31,10 @@ if jumlah_tiket_1001 <= 0:
     print("Peringatan: Kuota tiket tidak valid!")
 
 input_member_1001 = input("Apakah Anda member? (y/t)        : ").strip().lower()
-is_member_1001 = input_member_1001 in ["y", "ya"]
+is_member_1001 = input_member_1001 in [ "y", "ya"]
 
 input_promo_1001 = input("Apakah kode promo valid? (y/t)  : ").strip().lower()
-kode_promo_valid_1001 = input_promo_1001 in ["y", "ya"]
+kode_promo_valid_1001 = input_promo_1001 in [ "y", "ya"]
 
 # 2. Pemilihan Wahana Menggunakan match-case
 harga_satuan_1001 = 0
@@ -61,9 +61,6 @@ match paket_1001:
         harga_satuan_1001 = 0
 
 if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
-    # Status Kepemilikan SIM
-    status_sim_1001 = "Punya" if sim_1001 == 'y' else "Tidak Punya"
-
 
     # 3. Validasi Izin Kendali Wahana Menggunakan if-elif-else
     print("\n--- KELAYAKAN PENGENDARA WAHANA ---")
@@ -112,6 +109,11 @@ if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
 
     # OUTPUT SELANJUTNYA: RINCIAN PEMBAYARAN
     print("\n--- RINCIAN PEMBAYARAN ---")
+    print("\n--- DETAIL TRANSAKSI & PEMBAYARAN ---")
+    print(f"Paket Dipilih    : Paket {paket_1001} ({nama_wahana_1001})")
+    print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
+    print(f"Status Member    : {input_member_1001}")
+    print(f"Kode Promo Valid : {input_promo_1001}")
     print(f"Wahana Dipilih   : {nama_wahana_1001}")
     print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
     print(f"Subtotal Belanja : Rp {subtotal_1001:,.0f}")
