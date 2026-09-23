@@ -1,10 +1,21 @@
 print("=== SISTEM LOKET ALPRO ADVENTURE PARK ===")
 
-# 1. Input Data Pengunjung
+# 1. Input Data Pengunjung Utama
 nama_1001 = input("Masukkan Nama Pengunjung        : ")
 umur_1001 = int(input("Input umur anda                 : "))
 sim_1001 = input("Apakah Anda Sudah Punya SIM C (y/t): ")[0].lower()
 
+# Status Kepemilikan SIM
+status_sim_1001 = "Punya" if sim_1001 == 'y' else "Tidak Punya"
+
+#Output biodata pengunjung
+print("\n-----------------------------------------")
+print("--- BIODATA PENGUNJUNG ---")
+print(f"Nama Pengunjung  : {nama_1001}")
+print(f"Umur             : {umur_1001} tahun")
+print(f"Status SIM C     : {status_sim_1001}")
+
+# Tampilkan Daftar Paket Wahana untuk Masukan Pengunjung
 print("\nPilihan Paket Wahana (1-5):")
 print("  1. Safari Rimba         (Rp 50,000)")
 print("  2. Arung Jeram          (Rp 75,000)")
@@ -50,22 +61,28 @@ match paket_1001:
         harga_satuan_1001 = 0
 
 if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
+    # Status Kepemilikan SIM
+    status_sim_1001 = "Punya" if sim_1001 == 'y' else "Tidak Punya"
+
+
     # 3. Validasi Izin Kendali Wahana Menggunakan if-elif-else
     print("\n--- KELAYAKAN PENGENDARA WAHANA ---")
     if paket_1001 == 3:
         if umur_1001 >= 17 and sim_1001 == 'y':
-            print("Status Akses: Anda sudah dewasa dan boleh mengendarai ATV sendiri.")
+            status_akses_1001 = "Anda sudah dewasa dan boleh mengendarai ATV sendiri."
         elif umur_1001 >= 17 and sim_1001 != 'y':
-            print("Status Akses: Anda sudah dewasa tetapi tidak boleh bawa motor ATV (wajib didampingi instruktur).")
+            status_akses_1001 = "Anda sudah dewasa tetapi tidak boleh bawa motor ATV (wajib didampingi instruktur)."
         elif umur_1001 < 17 and sim_1001 == 'y':
-            print("Status Akses: Identitas tidak valid: Belum cukup umur memiliki SIM.")
+            status_akses_1001 = "Identitas tidak valid: Belum cukup umur memiliki SIM."
         else:
-            print("Status Akses: Anda belum cukup umur dan tidak boleh bawa motor ATV.")
+            status_akses_1001 = "Anda belum cukup umur dan tidak boleh bawa motor ATV."
     else:
         if umur_1001 >= 10:
-            print("Status Akses: Anda memenuhi syarat umur untuk wahana ini.")
+            status_akses_1001 = "Anda memenuhi syarat umur untuk wahana ini."
         else:
-            print("Status Akses: Anda belum cukup umur untuk wahana ini.")
+            status_akses_1001 = "Anda belum cukup umur untuk wahana ini."
+
+    print(f"Status Akses: {status_akses_1001}")
 
     # 4. Akumulasi Diskon Bertingkat Menggunakan Multi-IF Terpisah
     subtotal_1001 = harga_satuan_1001 * jumlah_tiket_1001
@@ -93,8 +110,10 @@ if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
     else:
         catatan_layanan_1001 = "Terima kasih telah berkunjung."
 
-    # Output Rincian Pembayaran
-    print("\n--- Rincian Pembayaran ---")
+    # OUTPUT SELANJUTNYA: RINCIAN PEMBAYARAN
+    print("\n--- RINCIAN PEMBAYARAN ---")
+    print(f"Wahana Dipilih   : {nama_wahana_1001}")
+    print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
     print(f"Subtotal Belanja : Rp {subtotal_1001:,.0f}")
     print(f"Total Diskon     : {total_diskon_persen_1001}% (Rp {nominal_diskon_1001:,.0f})")
     print(f"Total Bayar      : Rp {total_bayar_1001:,.0f}")
