@@ -109,7 +109,6 @@ if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
 
     # OUTPUT SELANJUTNYA: RINCIAN PEMBAYARAN
     print("\n--- RINCIAN PEMBAYARAN ---")
-    print("\n--- DETAIL TRANSAKSI & PEMBAYARAN ---")
     print(f"Paket Dipilih    : Paket {paket_1001} ({nama_wahana_1001})")
     print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
     print(f"Status Member    : {input_member_1001}")
