@@ -60,64 +60,63 @@ match paket_1001:
         print("\nPaket wahana tidak valid!")
         harga_satuan_1001 = 0
 
-if harga_satuan_1001 > 0 and jumlah_tiket_1001 > 0:
 
-    # 3. Validasi Izin Kendali Wahana Menggunakan if-elif-else
-    print("\n--- KELAYAKAN PENGENDARA WAHANA ---")
-    if paket_1001 == 3:
-        if umur_1001 >= 17 and sim_1001 == 'y':
-            status_akses_1001 = "Anda sudah dewasa dan boleh mengendarai ATV sendiri."
-        elif umur_1001 >= 17 and sim_1001 != 'y':
-            status_akses_1001 = "Anda sudah dewasa tetapi tidak boleh bawa motor ATV (wajib didampingi instruktur)."
-        elif umur_1001 < 17 and sim_1001 == 'y':
-            status_akses_1001 = "Identitas tidak valid: Belum cukup umur memiliki SIM."
-        else:
-            status_akses_1001 = "Anda belum cukup umur dan tidak boleh bawa motor ATV."
-    else:
-        if umur_1001 >= 10:
-            status_akses_1001 = "Anda memenuhi syarat umur untuk wahana ini."
-        else:
-            status_akses_1001 = "Anda belum cukup umur untuk wahana ini."
+# 3. Validasi Izin Kendali Wahana Menggunakan if-elif-else
+print("\n--- KELAYAKAN PENGENDARA WAHANA ---")
+if paket_1001 == 3:
+       if umur_1001 >= 17 and sim_1001 == 'y':
+           status_akses_1001 = "Anda sudah dewasa dan boleh mengendarai ATV sendiri."
+       elif umur_1001 >= 17 and sim_1001 != 'y':
+           status_akses_1001 = "Anda sudah dewasa tetapi tidak boleh bawa motor ATV (wajib didampingi instruktur)."
+       elif umur_1001 < 17 and sim_1001 == 'y':
+           status_akses_1001 = "Identitas tidak valid: Belum cukup umur memiliki SIM."
+       else:
+           status_akses_1001 = "Anda belum cukup umur dan tidak boleh bawa motor ATV."
+else:
+       if umur_1001 >= 10:
+           status_akses_1001 = "Anda memenuhi syarat umur untuk wahana ini."
+       else:
+           status_akses_1001 = "Anda belum cukup umur untuk wahana ini."
 
-    print(f"Status Akses: {status_akses_1001}")
+print(f"Status Akses: {status_akses_1001}")
 
     # 4. Akumulasi Diskon Bertingkat Menggunakan Multi-IF Terpisah
-    subtotal_1001 = harga_satuan_1001 * jumlah_tiket_1001
-    total_diskon_persen_1001 = 0
+subtotal_1001 = harga_satuan_1001 * jumlah_tiket_1001
+total_diskon_persen_1001 = 0
 
-    if subtotal_1001 >= 200000:
+if subtotal_1001 >= 200000:
         total_diskon_persen_1001 += 10  # Diskon Belanja Besar
 
-    if is_member_1001:
+if is_member_1001:
         total_diskon_persen_1001 += 5   # Diskon Member
 
-    if kode_promo_valid_1001:
+if kode_promo_valid_1001:
         total_diskon_persen_1001 += 15  # Diskon Voucher Promo
 
-    if jumlah_tiket_1001 >= 5:
+if jumlah_tiket_1001 >= 5:
         total_diskon_persen_1001 += 5   # Diskon Tambahan Rombongan
 
     # 5. Menghitung Nominal Diskon dan Total Bayar
-    nominal_diskon_1001 = subtotal_1001 * (total_diskon_persen_1001 / 100)
-    total_bayar_1001 = subtotal_1001 - nominal_diskon_1001
+nominal_diskon_1001 = subtotal_1001 * (total_diskon_persen_1001 / 100)
+total_bayar_1001 = subtotal_1001 - nominal_diskon_1001
 
     # Evaluasi Bonus Audit Menggunakan if-else
-    if total_bayar_1001 > 300000:
+if total_bayar_1001 > 300000:
         catatan_layanan_1001 = "Selamat! Anda berhak mendapatkan Souvenir Gratis."
-    else:
+else:
         catatan_layanan_1001 = "Terima kasih telah berkunjung."
 
     # OUTPUT SELANJUTNYA: RINCIAN PEMBAYARAN
-    print("\n--- RINCIAN PEMBAYARAN ---")
-    print(f"Paket Dipilih    : Paket {paket_1001} ({nama_wahana_1001})")
-    print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
-    print(f"Status Member    : {input_member_1001}")
-    print(f"Kode Promo Valid : {input_promo_1001}")
-    print(f"Wahana Dipilih   : {nama_wahana_1001}")
-    print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
-    print(f"Subtotal Belanja : Rp {subtotal_1001:,.0f}")
-    print(f"Total Diskon     : {total_diskon_persen_1001}% (Rp {nominal_diskon_1001:,.0f})")
-    print(f"Total Bayar      : Rp {total_bayar_1001:,.0f}")
-    print(f"Catatan Layanan  : {catatan_layanan_1001}")
+print("\n--- RINCIAN PEMBAYARAN ---")
+print(f"Paket Dipilih    : Paket {paket_1001} ({nama_wahana_1001})")
+print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
+print(f"Status Member    : {input_member_1001}")
+print(f"Kode Promo Valid : {input_promo_1001}")
+print(f"Wahana Dipilih   : {nama_wahana_1001}")
+print(f"Jumlah Tiket     : {jumlah_tiket_1001} tiket")
+print(f"Subtotal Belanja : Rp {subtotal_1001:,.0f}")
+print(f"Total Diskon     : {total_diskon_persen_1001}% (Rp {nominal_diskon_1001:,.0f})")
+print(f"Total Bayar      : Rp {total_bayar_1001:,.0f}")
+print(f"Catatan Layanan  : {catatan_layanan_1001}")
 
 print("Program Selesai")
