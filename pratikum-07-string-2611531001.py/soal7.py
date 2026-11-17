@@ -1,3 +1,7 @@
+# Name: <Fatimah Azzahra>
+# NIM: <2611531001>
+# Question 7
+
 full_name = " Siti Aisyah "
 nim = "2610511023"
 

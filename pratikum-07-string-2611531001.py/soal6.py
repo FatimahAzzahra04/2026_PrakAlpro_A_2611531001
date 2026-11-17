@@ -1,6 +1,6 @@
 # Name: <Fatimah Azzahra>
 # NIM: <2611531001>
-# Question 5
+# Question 6
 
 #soal6.py
 first_name = " muhammad"
@@ -39,4 +39,43 @@ else:
 username = first.lower() + nim[-3:]
 print(username)
 
+#soal tabel nomor 3
+full_name = "Kartika"
+nim = "2610511007"
 
+clean = full_name.strip()
+space = clean.find(" ")
+
+if space == -1:
+    first = clean
+else:
+    first = clean[:space]
+
+username = first.lower() + nim[-3:]
+print(username)
+
+#soal tabel nomor 4
+full_name = "Fatimah Azzahra"
+nim = "2611531001"
+
+clean = full_name.strip()
+space = clean.find(" ")
+
+if space == -1:
+    first = clean
+else:
+    first = clean[:space]
+
+username = first.lower() + nim[-3:]
+print(username)
+
+#program tanpa memeriksa nilai -1
+full_name = "Kartika"
+nim = "2610511007"
+
+clean = full_name.strip()
+space = clean.find(" ")
+first = clean[:space]
+
+username = first.lower() + nim[-3:]
+print(username)
