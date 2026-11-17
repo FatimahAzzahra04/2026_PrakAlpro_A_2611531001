@@ -11,4 +11,3 @@ print(name[::-1])
 print(len(name))
 name = name.lower()
 print(name)
-
