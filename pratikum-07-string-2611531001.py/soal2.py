@@ -12,3 +12,4 @@ print(clean.replace("kampus", "rumah"))
 print(clean.title())
 print("py" in clean)
 print("Py" in clean)
+

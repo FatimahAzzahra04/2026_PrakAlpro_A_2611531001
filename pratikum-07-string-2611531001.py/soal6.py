@@ -9,8 +9,7 @@ full_name = first_name.strip() + " " + last_name.strip()
 print(full_name)
 print(full_name.title())
 
-# Build the username: first name in lowercase + last 3 digits of the NIM.
-# Do not use split().
+#soal tabel nomor 1
 full_name = " Siti Aisyah "
 nim = "2610511023"
 
@@ -24,3 +23,20 @@ else:
 
 username = first.lower() + nim[-3:]
 print(username)
+
+#soal tabel nomor 2
+full_name = "Muhammad Rafi Pratama"
+nim = "2610511045"
+
+clean = full_name.strip()
+space = clean.find(" ")
+
+if space == -1:
+    first = clean
+else:
+    first = clean[:space]
+
+username = first.lower() + nim[-3:]
+print(username)
+
+
