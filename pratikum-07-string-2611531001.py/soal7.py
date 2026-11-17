@@ -2,8 +2,8 @@
 # NIM: <2611531001>
 # Question 7
 
-full_name = " Siti Aisyah "
-nim = "2610511023"
+full_name = " Fatimah Azzahra "
+nim = "2611531001"
 
 # Username dari Soal 6 (tanpa split)
 clean = full_name.strip()
