@@ -31,4 +31,3 @@ print(masked)
 phone = "082611531001"
 masked = phone [:4] + "*" *(len(phone)-7) + phone[-3:]
 print(masked)
-
