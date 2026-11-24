@@ -28,7 +28,7 @@ print("Total per menu:", menu_totals)
 # Menu terlaris (jika sama, pilih yang muncul lebih dulu)
 best_name, best_total = menu_totals[0]
 for name, total in menu_totals:
-    if total > best_total:   # '>' menjaga menu yang muncul lebih dulu
+    if total > best_total:  
         best_name = name
         best_total = total
 print(f"Best seller: {best_name} ({best_total})")
